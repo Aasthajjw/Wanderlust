@@ -90,7 +90,7 @@ app.use((err, req, res, next)=>{
 });
 
 app.get('/', (req, res) => {
-    res.redirect('/signup);
+    res.redirect('/signup');
 });
 
 app.listen(8080, ()=>{
