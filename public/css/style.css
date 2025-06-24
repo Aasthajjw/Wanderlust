@@ -101,6 +101,16 @@ body{
     width: 60vw;
 }
 
+@media (width < 576px) {
+    #map {
+        height: 40vh;
+        width: 90vw;
+    }
+    .map{
+        margin-left: 1.5vw !important;
+    }
+}
+
 /* filters */
 #filters {
     display: flex;
