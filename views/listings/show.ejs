@@ -4,10 +4,10 @@
     let coordinates = <%- JSON.stringify(listing.geometry.coordinates || [0,0]) %>;
 </script>
 <div class="row">
-<div class="col-8 offset-2 mt-3">
+<div class="col-sm-8 offset-sm-2 mt-3">
     <h2><b><%= listing.title %></b></h2>
 </div>
-<div class="card listing-card col-8 offset-2 show-card">
+<div class="card listing-card col-sm-8 offset-sm-2 show-card">
     <img src="<%=listing.image.url%>" class="card-img-top show-img" alt="Listing-image" style = "height: 20rem"> <br>
     <div class="card-body">
         <i>Owned by: <%= listing.owner.username %></i>
@@ -19,14 +19,14 @@
 </div>
 <% if(currUser && currUser._id.equals(listing.owner._id)){ %>
     <div class="btns mb-3 mt-3">
-        <a href="/listings/<%= listing._id%>/edit" class="btn btn-dark col-2 offset-3">Edit this Listing</a>
+        <a href="/listings/<%= listing._id%>/edit" class="btn btn-dark col-sm-2 offset-sm-3">Edit this Listing</a>
         <form method="post" action="/listings/<%=listing._id%>?_method=DELETE">
             <button class="btn btn-dark offset-5">Delete</button>
         </form>
     </div>
 <%} %>
 <% if(currUser){ %>
-<div class="col-8 offset-2">
+<div class="col-sm-8 offset-sm-2">
     <hr>
     <h4>Leave a Review!</h4>
     <form method="post" action="/listings/<%= listing._id%>/reviews" novalidate class="needs-validation">    
@@ -56,7 +56,7 @@
 </div> 
 <% } %>
 <% if(listing.review.length>0){ %>
-<div class="col-8 offset-2 mt-3 row">
+<div class="col-sm-8 offset-sm-2 mt-3 row">
     <hr>
     <h4><b>All Reviews</b></h4>
     <% for(rev of listing.review){ %>
@@ -75,7 +75,7 @@
     <% } %>
 </div>
 <% } %>
-<div class="col-8 offset-2 mt-3 row">
+<div class="col-sm-8 offset-sm-2 mt-3 row">
     <hr>
     <p>Where you will be</p>
     <div class="mb-3" id="map"></div>
